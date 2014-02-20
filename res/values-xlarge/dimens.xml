@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="MenuText">13sp</dimen>
+    <dimen name="MenuPadding">30dp</dimen>
+    <dimen name="MenuPaddingLand">50dp</dimen>
+    <dimen name="MenuRow">18dp</dimen>
+    <dimen name="MenuRow2">15dp</dimen>
+    <dimen name="padding_below_menu_text">0dp</dimen>
+    <dimen name="image_bottom_pad">5dp</dimen>
+    <dimen name="external_padding">15dp</dimen>
+    <dimen name="column_width">85dp</dimen>
+    <dimen name="internal_padding">14dp</dimen>
+    <dimen name="max_height">60dp</dimen>
+    <dimen name= "soc_txt">18dp</dimen>
+</resources>

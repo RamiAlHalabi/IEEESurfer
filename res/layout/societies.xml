@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/societiesbg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:alpha="255"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:ignore="NestedWeights" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight=".5"
+        android:minHeight="50dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".7"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/logosocieties"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:adjustViewBounds="true"
+                android:background="#55FFFFFF"
+                android:contentDescription="@string/logo"
+                android:padding="4dp"
+                android:src="@drawable/ic_launcher" />
+
+            <ImageButton
+                android:id="@+id/goto_site"
+                style="@style/ButtonBarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight=".7"
+                android:alpha="0.8"
+                android:background="@null"
+                android:contentDescription="@string/gotosite"
+                android:maxLines="1"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/www_icon_sel"
+                android:textSize="@dimen/MenuText"
+                android:textStyle="italic"
+                android:typeface="serif" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/namesocieties"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight=".3"
+            android:lines="2"
+            android:maxLines="3"
+            android:paddingBottom="8dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/soc_txt"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/filter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:ems="10"
+            android:hint="@string/search"
+            android:lines="1"
+            android:maxLines="1"
+            android:maxWidth="@dimen/column_width"
+            android:paddingTop="@dimen/MenuRow" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/clearfilter"
+            style="@style/ButtonBarButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom|left"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:maxLines="1"
+            android:minWidth="50dp"
+            android:paddingBottom="8dp"
+            android:text="@string/clear"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:typeface="normal" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listsocieties"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight=".35"
+        android:alpha="255"
+        android:animateLayoutChanges="false"
+        android:background="@null"
+        android:cacheColorHint="@null"
+        android:choiceMode="singleChoice"
+        android:clipChildren="false"
+        android:fadingEdge="none|vertical"
+        android:fadingEdgeLength="3dp"
+        android:fastScrollAlwaysVisible="true"
+        android:fastScrollEnabled="false"
+        android:listSelector="@null"
+        android:padding="8dp"
+        android:scrollingCache="true"
+        android:smoothScrollbar="true"
+        android:textFilterEnabled="false" >
+    </ListView>
+
+</LinearLayout>

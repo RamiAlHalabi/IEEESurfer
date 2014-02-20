@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/about_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/about"
+        android:textColor="@color/white" />
+
+    <ImageButton
+        android:id="@+id/closeabout"
+        style="@style/ButtonBarButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="false"
+        android:background="@null"
+        android:contentDescription="@string/closeabout"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        android:src="@drawable/ic_action_name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

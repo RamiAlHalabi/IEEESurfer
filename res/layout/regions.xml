@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/regionsbg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:padding="8dp" >
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight=".5"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/logoregions"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight=".4"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:paddingBottom="@dimen/internal_padding"
+            android:scaleType="fitStart"
+            android:src="@drawable/regions" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:orientation="vertical"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:id="@+id/nameregion"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                android:lines="3"
+                android:maxLines="3"
+                android:paddingBottom="8dp"
+                android:paddingLeft="@dimen/external_padding"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/MenuText"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <ImageButton
+                android:id="@+id/goto_site2"
+                style="@style/ButtonBarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:alpha="0.8"
+                android:background="@null"
+                android:baselineAlignBottom="false"
+                android:contentDescription="@string/gotosite"
+                android:maxHeight="80dp"
+                android:maxWidth="200dp"
+                android:padding="@dimen/external_padding"
+                android:paddingBottom="8dp"
+                android:paddingTop="@dimen/internal_padding"
+                android:scaleType="fitEnd"
+                android:src="@drawable/www_icon_sel" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listregions"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight=".4"
+        android:alpha="255"
+        android:animateLayoutChanges="false"
+        android:background="@null"
+        android:cacheColorHint="@null"
+        android:choiceMode="singleChoice"
+        android:clipChildren="false"
+        android:fadingEdge="none|vertical"
+        android:fadingEdgeLength="3dp"
+        android:fastScrollAlwaysVisible="true"
+        android:fastScrollEnabled="false"
+        android:listSelector="@null"
+        android:longClickable="false"
+        android:padding="8dp"
+        android:smoothScrollbar="true"
+        android:textFilterEnabled="false" >
+
+
+    </ListView>
+
+</LinearLayout>

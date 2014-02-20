@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ieeemadcandroid.ieeesurfer"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="5"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Android 1.5 requires this -->
+    <uses-permission android:name="com.ieeemadcandroid.ieeesurfer.rss.READFEEDS" />
+    <uses-permission android:name="com.ieeemadcandroid.ieeesurfer.rss.WRITEFEEDS" />
+
+    <permission
+        android:name="com.ieeemadcandroid.ieeesurfer.rss.READFEEDS"
+        android:description="@string/permission_readfeeds_description"
+        android:label="@string/permission_readfeeds"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.ieeemadcandroid.ieeesurfer.rss.WRITEFEEDS"
+        android:description="@string/permission_writefeeds_description"
+        android:label="@string/permission_writefeeds"
+        android:protectionLevel="normal" />
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:testOnly="false" >
+        <service android:name="com.ieeemadcandroid.ieeesurfer.rss.service.RefreshService" />
+        <service android:name="com.ieeemadcandroid.ieeesurfer.rss.service.FetcherService" />
+
+        <provider
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.provider.FeedDataContentProvider"
+            android:authorities="com.ieeemadcandroid.ieeesurfer.rss.provider.FeedData"
+            android:readPermission="com.ieeemadcandroid.ieeesurfer.rss.READFEEDS"
+            android:writePermission="com.ieeemadcandroid.ieeesurfer.rss.WRITEFEEDS" />
+
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.splash.SplashStart"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.MainTabActivity"
+            android:label="@string/news_name"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.rss.RSSMAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.RSSOverview"
+            android:launchMode="singleTask" />
+        <activity android:name="com.ieeemadcandroid.ieeesurfer.rss.EmptyActivity" />
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.EntriesListActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.feeddata.entry" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.EntryActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.feeddata.entry" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.rss.ApplicationPreferencesActivity"
+            android:label="@string/news_prefs" />
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.main.MenuPrefs"
+            android:label="@string/menu_prefs" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.main.PREFERENCES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ieeemadcandroid.ieeesurfer.rss.widget.WidgetConfigActivity" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ieeemadcandroid.ieeesurfer.rss.FeedConfigActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.feeddata.feed" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.feeddata.feed" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.societies.SocietyList"
+            android:label="@string/ieee_societies" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.societies.SOCIETIES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.societies.RegionList"
+            android:label="@string/ieee_regions" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.societies.REGIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.main.About"
+            android:label="@string/options_about"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.main.ABOUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.main.Help"
+            android:label="@string/options_help"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.main.HELP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.main.MenuGrid"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.MAINMENU" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ieeemadcandroid.ieeesurfer.main.SocialMedia"
+            android:label="@string/ieee_social"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.main.SOCIALMEDIA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.ieeemadcandroid.ieeesurfer.rss.widget.RSSAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.ieeemadcandroid.ieeesurfer.rss.FEEDUPDATED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widgetinfo" />
+        </receiver>
+        <receiver android:name="com.ieeemadcandroid.ieeesurfer.rss.RefreshBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="com.ieeemadcandroid.ieeesurfer.rss.REFRESH" />
+                <action android:name="com.ieeemadcandroid.ieeesurfer.rss.STOPREFRESH" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ieeemadcandroid.ieeesurfer.rss.BootCompletedBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

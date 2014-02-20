@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <com.ieeemadcandroid.ieeesurfer.main.ColorPickerDialogPreference
+        android:dialogLayout="@layout/colortransparencypicker"
+        android:key="menu.background"
+        android:negativeButtonText="@android:string/cancel"
+        android:positiveButtonText="@android:string/ok"
+        android:title="@string/options_background" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="menu.extended"
+        android:switchTextOn="@string/extended_menu"
+        android:title="@string/extended_menu" />
+
+   <ListPreference
+       	android:name="@string/nb_columns"
+        android:defaultValue="3"
+        android:title="@string/nb_columns"
+        android:entries="@array/settings_columns"
+        android:entryValues="@array/settings_columns"
+        android:key="menu.columns"
+        android:inputType="number"/>
+   
+
+    <EditTextPreference
+        android:defaultValue="https://www.facebook.com/ieee.lufeiii"
+        android:key="menu.sbaddr"
+        android:inputType="text"
+        android:title="@string/ieee_sb_addr" />
+</PreferenceScreen>

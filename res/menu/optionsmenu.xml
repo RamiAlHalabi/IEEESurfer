@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+        android:id="@+id/press_prefs"
+        android:icon="@drawable/ic_menu_prefs"
+        android:title="@string/options_preferences">
+    </item>
+    <item
+        android:id="@+id/press_about"
+        android:icon="@drawable/ic_menu_about"
+        android:title="@string/options_about">
+    </item>
+    <item
+        android:id="@+id/press_help"
+        android:icon="@drawable/ic_menu_help"
+        android:title="@string/options_help">
+    </item>
+    
+    
+
+</menu>

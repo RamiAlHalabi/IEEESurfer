@@ -1,0 +1,36 @@
+IEEESurfer Android Application
+Developed by Rami Al Halabi
+Lebanese University - Faculty of Engineering
+To be presented to the jury of IEEE madC. 2014
+
+
+
+
+The following is a list of open source software used and the respective license.
+All the images and logos used in the application are edited by the developer,
+but are respective trade marks of their original owners.
+
+
+
+
+
+Sparse rss android program
+
+Copyright (c) 2010-2013 Stefan Handschuh
+
+Translators
+ - Dutch: Eelko Berkenpies
+ - Spanish: Sergio Martín
+ - French: <unnamed>
+ - Turkish: <unnamed>
+ - Russian: Igor Nedoboy
+ - Swedish: Lars m
+
+Code-Contributors
+ - Joel Low
+ - Sergii Pylypenko
+ - Mathias Weinert
+
+The file "com/ieeemadcandroid/ieeesurfer/rss/LICENSE" contains the license information for this software.
+
+Icons and artwork are distributed under the CC-BY 3.0 license.
